@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'delphic_snapshots::script_file' do
+describe 'ebs_snapshots::script_file' do
   cached(:chef_run) do
     default_chef_run do |node|
     end

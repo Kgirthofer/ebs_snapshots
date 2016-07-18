@@ -4,7 +4,7 @@ require 'spec_helper'
 # using chef client or another WIN32OLE dependent cookbook?
 # require 'radian/chef/win32ole_chefspec_linux.rb'
 
-describe 'delphic_snapshots::default' do
+describe 'ebs_snapshots::default' do
   cached(:chef_run) { default_chef_run }
   subject { chef_run }
 
@@ -15,9 +15,9 @@ describe 'delphic_snapshots::default' do
   end
 
   describe 'included recipies' do
-    it { is_expected.to include_recipe 'delphic_aws::default' }
-    it { is_expected.to include_recipe 'delphic_snapshots::credentials' }
-    it { is_expected.to include_recipe 'delphic_snapshots::script_file' }
-    it { is_expected.to include_recipe 'delphic_snapshots::cron' }
+    it { is_expected.to include_recipe 'aws_cli::default' }
+    it { is_expected.to include_recipe 'ebs_snapshots::credentials' }
+    it { is_expected.to include_recipe 'ebs_snapshots::script_file' }
+    it { is_expected.to include_recipe 'ebs_snapshots::cron' }
   end
 end

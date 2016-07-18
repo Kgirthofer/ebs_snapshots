@@ -17,7 +17,7 @@ driver:
   security_group_ids:   <%= config.security_group_ids %>
   retry_limit:		20
   subnet_id:            <%= config.private_subnet_id %>
-<%= config.tags("delphic_snapshots", user, 'Linux', '24h') %>
+<%= config.tags("ebs_snapshots", user, 'Linux', '24h') %>
 
 driver_config:
     name:                ec2
@@ -44,7 +44,7 @@ platforms:
 suites:
   - name: default
     # use these if you require encrypted data bags:  Setup a submodule:
-    # %> git submodule add ssh://git@bitbucket.org:22/delphicdigitaldevops/chef_repo.git
+    # %> git submodule add your git submodule url here
     # then uncoment the below lines:
     data_bags_path: "chef_repo/test/data_bags"
     encrypted_data_bag_secret_key_path: "chef_repo/test/secret"
@@ -54,9 +54,9 @@ suites:
     # %> rm -rf .git/modules/chef_repo
     run_list:
       # use this if you are building an application cookbook, and comment out
-      # the recipe.  Make sure you add roles/delphic_snapshots.json, and the
-      # attribute: default['application'] = 'delphic_snapshots' to
+      # the recipe.  Make sure you add roles/ebs_snapshots.json, and the
+      # attribute: default['application'] = 'ebs_snapshots' to
       # attributes/default.rb too.
-      # - role[delphic_snapshots]
-      - recipe[delphic_snapshots::default]
+      # - role[ebs_snapshots]
+      - recipe[ebs_snapshots::default]
     attributes:

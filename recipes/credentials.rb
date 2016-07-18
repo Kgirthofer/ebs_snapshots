@@ -1,4 +1,4 @@
-decrypted_aws = Chef::EncryptedDataBagItem.load('aws', "#{node['delphic_snapshots']['aws_account']}")
+decrypted_aws = Chef::EncryptedDataBagItem.load('aws', "#{node['ebs_snapshots']['aws_account']}")
 
 directory '/root/.aws' do
   action :create
