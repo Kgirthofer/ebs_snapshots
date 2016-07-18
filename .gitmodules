@@ -1,0 +1,3 @@
+[submodule "chef_repo"]
+	path = chef_repo
+	url = ssh://git@bitbucket.org:22/delphicdigitaldevops/chef_repo.git
